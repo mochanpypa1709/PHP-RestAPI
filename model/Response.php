@@ -2,7 +2,7 @@
     class Response {
         private $_success;
         private $_httpStatusCode;
-        private $_message = array();
+        private $_messages = array();
         private $_data;
         private $_toCache = false;
         private $_responseData = array();
@@ -15,8 +15,8 @@
             $this->_httpStatusCode = $httpStatusCode;
         }
 
-        public function addMessage($message) {
-            $this->_message[] = $message;
+        public function addMessage($messages) {
+            $this->_messages[] = $messages;
         }
 
         public function setData($data) {
@@ -55,4 +55,3 @@
             echo json_encode($this->_responseData);
         }
     }
-?>
