@@ -30,16 +30,29 @@
         public function send() {
             header('Content-type: application/json;charset=utf-8');
             
+            if($this->_toCache == TRUE) {
+                header('Cache-control: max-age=60');
+            }
+            else {
+                header('Cache-control: no-cache, no-store');
+            }
 
+            if(($this->_success !== FALSE && $this->_success !== TRUE) || !is_numeric($this->_httpStatusCode)) {
+                http_response_code(500);                    
+                $this->_responseData['statusCode'] = 500;
+                $this->_responseData['success'] = FALSE;
+                $this->addMessage("Response creation error");
+                $this->_responseData['messages'] = $this->_messages;
+            }
+            else {
+                http_response_code($this->_httpStatusCode);                    
+                $this->_responseData['statusCode'] = $this->_httpStatusCode;
+                $this->_responseData['success'] = $this->_success;
+                $this->_responseData['messages'] = $this->_messages;
+                $this->_responseData['data'] = $this->_data;
+            }
 
-
-
-            
+            echo json_encode($this->_responseData);
         }
-
-
     }
-
-
-
 ?>
