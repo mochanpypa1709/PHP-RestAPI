@@ -96,7 +96,7 @@ if(array_key_exists("taskid",$_GET)) {
                 $response->addMessage("Task not found");
                 $response->send();
                 exit;
-            }
+             }
             $response = new Response();
             $response->setHttpStatusCode(200);
             $response->setSuccess(true);
