@@ -125,3 +125,6 @@ if(array_key_exists("taskid",$_GET)) {
         exit();
     }
 }
+elseif(array_key_exists("completed",$_GET)) {
+    
+}
