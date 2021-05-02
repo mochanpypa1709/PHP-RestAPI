@@ -5,9 +5,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^tasks/([0-9]+)$ controller/task.php?taskid=$1 [L]
-RewriteRule ^tasks/complete$ controller/task.php?completed=Y [L]    # Handle task get complete status requests
-RewriteRule ^tasks/incomplete$ controller/task.php?completed=N [L]  # Handle task get incomplete status requests
-RewriteRule ^tasks$ controller/task.php [L]                         # Handle task requests
-RewriteRule ^tasks/page/([0-9]+)$ controller/task.php?page=$1 [L]   # Handle page requests
+RewriteRule ^tasks/complete$ controller/task.php?completed=Y [L]            # Handle task get complete status requests
+RewriteRule ^tasks/incomplete$ controller/task.php?completed=N [L]          # Handle task get incomplete status requests
+RewriteRule ^tasks$ controller/task.php [L]                                 # Handle task requests
+RewriteRule ^tasks/page/([0-9]+)$ controller/task.php?page=$1 [L]           # Handle page requests
 
-RewriteRule ^users$ controller/users.php [L]                        # Handle user requests
+RewriteRule ^users$ controller/users.php [L]                                # Handle user requests
+
+# Authentication
+RewriteRule ^sessions/([0-9]+)$ controller/sessions.php?sessionid=$1 [L]    # Handle session id requests
+RewriteRule ^sessions$ controller/sessions.php [L]                          # Handle login requests
