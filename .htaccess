@@ -4,6 +4,8 @@ php_flag display_errors on
 # enabled explicity when needed
 SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
 
+Options -Indexes
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
