@@ -134,7 +134,7 @@ if (array_key_exists("taskid",$_GET)) {
       $query = $readDB->prepare('SELECT id, title, description, DATE_FORMAT(deadline, "%d/%m/%Y %H:%i") as deadline, completed from tbltasks where id = :taskid and userid = :userid');
       $query->bindParam(':taskid', $taskid, PDO::PARAM_INT);
       $query->bindParam(':userid', $returned_userid, PDO::PARAM_INT);
-  		$query->execute();
+  	  $query->execute();
 
       // get row count
       $rowCount = $query->rowCount();
