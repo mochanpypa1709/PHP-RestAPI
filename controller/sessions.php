@@ -269,6 +269,7 @@ if (array_key_exists("sessionid",$_GET)) {
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
+      $response->addMessage("Token Refresh");
       $response->setData($returnData);
       $response->send();
       exit;
