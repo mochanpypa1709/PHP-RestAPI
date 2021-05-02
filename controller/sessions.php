@@ -416,7 +416,7 @@ elseif(empty($_GET)) {
       // bind the user id
       $query->bindParam(':id', $returned_id, PDO::PARAM_INT);
       // run the query
-    	$query->execute();
+      $query->execute();
 
       // send response
       $response = new Response();
