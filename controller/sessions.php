@@ -88,6 +88,7 @@ if (array_key_exists("sessionid",$_GET)) {
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
+      $response->addMessage("Logged Out");
       $response->setData($returnData);
       $response->send();
       exit;
