@@ -1,5 +1,10 @@
 php_flag display_errors on
 
+
+#CORS Options
+Header Set Access-Control-Allow-Origin "*"                                  #API can accessed by all front end domain / allow each endpoint
+#Header Set Access-Control-Allow-Origin "https://yourfrontendsitehere.com" 
+
 # Fix for Apache AUTHORIZATION http header as it is stripped by default for security and should be
 # enabled explicity when needed
 SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
