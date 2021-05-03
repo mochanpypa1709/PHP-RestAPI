@@ -1,6 +1,5 @@
 php_flag display_errors on
 
-
 #CORS Options
 Header Set Access-Control-Allow-Origin "*"                                  #API can accessed by all front end domain / allow each endpoint
 #Header Set Access-Control-Allow-Origin "https://yourfrontendsitehere.com" 
