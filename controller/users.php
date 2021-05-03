@@ -23,6 +23,18 @@ catch(PDOException $ex) {
   exit;
 }
 
+//handle Options request method for CORS
+if($_SERVER['REQUEST_METHOD'] === 'OPTION') {
+  header('Access-Control-Allow-Methods: POST, OPTIONS');
+  header('Access-Control-Allow-Headers: Content-Type');
+  header('Access-Control-Max-Age: 84600');
+  $response = new Response();
+  $response->setHttpStatusCode(200);
+  $response->setSuccess(true);
+  $response->send();
+  exit;
+}
+
 // handle creating new user
 // check to make sure the request is POST only - else exit with error response
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
