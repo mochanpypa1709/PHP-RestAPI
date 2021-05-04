@@ -25,3 +25,8 @@ RewriteRule ^users$ controller/users.php [L]                                # Ha
 # Authentication
 RewriteRule ^sessions/([0-9]+)$ controller/sessions.php?sessionid=$1 [L]    # Handle session id requests
 RewriteRule ^sessions$ controller/sessions.php [L]                          # Handle login requests
+
+# Images
+RewriteRule ^tasks/([0-9]+)/images/([0-9]+)/attributes$ controller/images.php?taskid=$1&imageid=$2&attributes=true [L]  # Handle image id requests for image metadata
+RewriteRule ^tasks/([0-9]+)/images/([0-9]+)$ controller/images.php?taskid=$1&imageid=$2 [L]                             # Handle image id requests
+RewriteRule ^tasks/([0-9]+)/images$ controller/images.php?taskid=$1 [L]                                                 # Handle image requests
