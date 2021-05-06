@@ -24,7 +24,7 @@ catch(PDOException $ex) {
 }
 
 //handle Options request method for CORS
-if($_SERVER['REQUEST_METHOD'] === 'OPTION') {
+if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   header('Access-Control-Allow-Methods: POST, OPTIONS');
   header('Access-Control-Allow-Headers: Content-Type');
   header('Access-Control-Max-Age: 84600');
